@@ -10,21 +10,21 @@ contract astrocoin is EIP20Interface {
     mapping (address => uint256) public balances;
     mapping (address => mapping (address => uint256)) public allowed;
     
-    string public name;                   //fancy name: eg Simon Bucks
-    uint8 public decimals;                //How many decimals to show.
-    string public symbol;                 //An identifier: eg SBX
-
+    string public name;                   
+    uint8 public decimals;                
+    string public symbol;                
+    
     function astrocoin(
         uint256 _initialAmount,
         string _tokenName,
         uint8 _decimalUnits,
         string _tokenSymbol
     ) public {
-        balances[msg.sender] = _initialAmount;               // Give the creator all initial tokens
-        totalSupply = _initialAmount;                        // Update total supply
-        name = _tokenName;                                   // Set the name for display purposes
-        decimals = _decimalUnits;                            // Amount of decimals for display purposes
-        symbol = _tokenSymbol;                               // Set the symbol for display purposes
+        balances[msg.sender] = _initialAmount;              
+        totalSupply = _initialAmount;                       
+        name = _tokenName;                                 
+        decimals = _decimalUnits;                            
+        symbol = _tokenSymbol;                              
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {
